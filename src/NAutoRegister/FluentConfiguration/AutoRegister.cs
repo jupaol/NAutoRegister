@@ -12,6 +12,9 @@
 
 namespace NAutoRegister.FluentConfiguration
 {
+    using System;
+    using System.Linq;
+
     /// <summary>
     /// NAutoRegister configuration object
     /// </summary>
@@ -78,6 +81,12 @@ namespace NAutoRegister.FluentConfiguration
                 AutoRegister.IncludingAssembliesConfiguration.IncludedAssemblies,
                 AutoRegister.ExcludingAssembliesConfiguration.ExcludedAssemblies,
                 AutoRegister.ExcludingAssembliesConfiguration.ExcludedAssemblyNames);
+            var mergedAssemblies = assemblyMerger.MergeAssemblies();
+            var bindingProcessor = new BindingProcessor(mergedAssemblies);
+
+            AutoRegister.SpecificMappingsConfigurationForType.BindingContracts.ToList().ForEach(x => bindingProcessor.AddBindingContract(x));
+
+            ////bindingProcessor.RegisterTypes();
         }
 
         /// <summary>
