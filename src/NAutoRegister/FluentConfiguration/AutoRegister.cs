@@ -62,6 +62,16 @@ namespace NAutoRegister.FluentConfiguration
         internal static ISpecificMappingsConfigurationForType SpecificMappingsConfigurationForType { get; private set; }
 
         /// <summary>
+        /// Gets the container configuration.
+        /// </summary>
+        internal static IContainerConfiguration ContainerConfiguration { get; private set; }
+
+        /// <summary>
+        /// Gets the register types configuration.
+        /// </summary>
+        internal static IRegisterTypesConfiguration RegisterTypesConfiguration { get; private set; }
+
+        /// <summary>
         /// Starts the configuration process
         /// </summary>
         /// <returns>
@@ -86,7 +96,7 @@ namespace NAutoRegister.FluentConfiguration
 
             AutoRegister.SpecificMappingsConfigurationForType.BindingContracts.ToList().ForEach(x => bindingProcessor.AddBindingContract(x));
 
-            ////bindingProcessor.RegisterTypes();
+            bindingProcessor.RegisterTypes(AutoRegister.ContainerConfiguration.CurrentContainer);
         }
 
         /// <summary>
@@ -100,6 +110,8 @@ namespace NAutoRegister.FluentConfiguration
             AutoRegister.MappingsConfiguration = new MappingsConfiguration();
             AutoRegister.SpecificMappingsConfiguration = new SpecificMappingsConfiguration();
             AutoRegister.SpecificMappingsConfigurationForType = new SpecificMappingsConfigurationForType();
+            AutoRegister.ContainerConfiguration = new ContainerConfiguration();
+            AutoRegister.RegisterTypesConfiguration = new RegisterTypesConfiguration();
         }
     }
 }

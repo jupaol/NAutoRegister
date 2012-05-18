@@ -35,5 +35,13 @@ namespace NAutoRegister.FluentConfiguration
         {
             get { return AutoRegister.SpecificMappingsConfigurationForType; }
         }
+
+        /// <summary>
+        /// Gets the container configuration
+        /// </summary>
+        public IContainerConfiguration WithContainer
+        {
+            get { return AutoRegister.ContainerConfiguration; }
+        }
     }
 }

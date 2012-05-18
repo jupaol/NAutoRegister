@@ -23,6 +23,8 @@ namespace NAutoRegisterTests.FluentConfiguration
                 AutoRegister.IncludingAssembliesConfiguration.Should().NotBeNull();
                 AutoRegister.MappingsConfiguration.Should().NotBeNull();
                 AutoRegister.SpecificMappingsConfigurationForType.Should().NotBeNull();
+                AutoRegister.ContainerConfiguration.Should().NotBeNull();
+                AutoRegister.RegisterTypesConfiguration.Should().NotBeNull();
             }
         }
     }

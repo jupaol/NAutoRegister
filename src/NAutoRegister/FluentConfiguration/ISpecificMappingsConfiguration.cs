@@ -29,5 +29,10 @@ namespace NAutoRegister.FluentConfiguration
         /// representing the options avalaible to the user to register a new type
         /// </summary>
         ISpecificMappingsConfigurationForType For { get; }
+
+        /// <summary>
+        /// Gets the container configuration
+        /// </summary>
+        IContainerConfiguration WithContainer { get; }
     }
 }
