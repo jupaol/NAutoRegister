@@ -28,7 +28,7 @@ namespace NAutoRegisterTests.FluentConfiguration
             {
                 var sut = new ContainerConfiguration();
                 Mock<IContainer> container = new Mock<IContainer>();
-                sut.AddContainer(container.Object).Should().NotBeNull().And.Be(AutoRegister.RegisterTypesConfiguration);
+                sut.Container(container.Object).Should().NotBeNull().And.Be(AutoRegister.RegisterTypesConfiguration);
                 sut.CurrentContainer.Should().NotBeNull().And.Be(container.Object);
             }
         }

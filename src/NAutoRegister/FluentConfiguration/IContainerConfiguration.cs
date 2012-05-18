@@ -34,6 +34,6 @@ namespace NAutoRegister.FluentConfiguration
         /// <returns>
         /// An instance of the register types configuration object
         /// </returns>
-        IRegisterTypesConfiguration AddContainer(IContainer container);
+        IRegisterTypesConfiguration Container(IContainer container);
     }
 }

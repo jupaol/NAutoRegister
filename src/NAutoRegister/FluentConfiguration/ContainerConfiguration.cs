@@ -35,7 +35,7 @@ namespace NAutoRegister.FluentConfiguration
         /// <returns>
         /// An instance of the register types configuration object
         /// </returns>
-        public IRegisterTypesConfiguration AddContainer(IContainer container)
+        public IRegisterTypesConfiguration Container(IContainer container)
         {
             Condition.Requires(container).IsNotNull();
 
