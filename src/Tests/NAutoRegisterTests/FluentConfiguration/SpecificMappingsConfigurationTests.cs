@@ -20,5 +20,15 @@ namespace NAutoRegisterTests.FluentConfiguration
                 AutoRegister.Configure().Including.WithMappings.SpecificMappings.WithMappings.Should().NotBeNull().And.Be(AutoRegister.MappingsConfiguration);
             }
         }
+
+        [TestClass]
+        public class TheForProperty
+        {
+            [TestMethod]
+            public void it_should_return_the_current_shared_specific_mappings_configuration_for_a_specific_type_object()
+            {
+                AutoRegister.Configure().Including.WithMappings.SpecificMappings.For.Should().NotBeNull().And.Be(AutoRegister.SpecificMappingsConfigurationForType);
+            }
+        }
     }
 }

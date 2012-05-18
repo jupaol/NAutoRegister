@@ -12,6 +12,8 @@
 
 namespace NAutoRegister.FluentConfiguration
 {
+    using System;
+
     /// <summary>
     /// The specific mappings configuration options
     /// </summary>
@@ -23,6 +25,15 @@ namespace NAutoRegister.FluentConfiguration
         public IMappingsConfiguration WithMappings
         {
             get { return AutoRegister.MappingsConfiguration; }
+        }
+
+        /// <summary>
+        /// Gets an instance of the<see cref="ISpecificMappingsConfigurationForType"/> object
+        /// representing the options avalaible to the user to register a new type
+        /// </summary>
+        public ISpecificMappingsConfigurationForType For
+        {
+            get { return AutoRegister.SpecificMappingsConfigurationForType; }
         }
     }
 }

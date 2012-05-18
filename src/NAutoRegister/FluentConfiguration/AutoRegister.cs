@@ -51,6 +51,14 @@ namespace NAutoRegister.FluentConfiguration
         internal static ISpecificMappingsConfiguration SpecificMappingsConfiguration { get; private set; }
 
         /// <summary>
+        /// Gets the specific mappings for type configuration
+        /// </summary>
+        /// <value>
+        /// The type of the specific mappings for type configuration
+        /// </value>
+        internal static ISpecificMappingsConfigurationForType SpecificMappingsConfigurationForType { get; private set; }
+
+        /// <summary>
         /// Starts the configuration process
         /// </summary>
         /// <returns>
@@ -82,6 +90,7 @@ namespace NAutoRegister.FluentConfiguration
             AutoRegister.ExcludingAssembliesConfiguration = new ExcludingAssembliesConfiguration();
             AutoRegister.MappingsConfiguration = new MappingsConfiguration();
             AutoRegister.SpecificMappingsConfiguration = new SpecificMappingsConfiguration();
+            AutoRegister.SpecificMappingsConfigurationForType = new SpecificMappingsConfigurationForType();
         }
     }
 }

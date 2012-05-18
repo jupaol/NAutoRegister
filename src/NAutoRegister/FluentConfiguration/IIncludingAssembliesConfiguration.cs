@@ -1,6 +1,12 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="IIncludingAssembliesConfiguration.cs" company="Hewlett-Packard">
-// TODO: Update copyright text.
+// <copyright file="IIncludingAssembliesConfiguration.cs" company="Juan Pablo Olmos Lara (Jupaol)">
+//
+// jupaol@hotmail.com
+// http://jupaol.blogspot.com/
+// 
+// Copyright (c) 2012, Juan Pablo Olmos Lara (Jupaol)
+// All rights reserved.
+// 
 // </copyright>
 // -----------------------------------------------------------------------
 
@@ -51,7 +57,7 @@ namespace NAutoRegister.FluentConfiguration
         /// <summary>
         /// Adds the assembly of the generic type to the included assemblies collection
         /// </summary>
-        /// <typeparam name="T">The generic type to get the assembly from</typeparam>
+        /// <typeparam name="T">The type to get the assembly from</typeparam>
         /// <returns>
         /// The current instance of the including assemblies configuration
         /// </returns>

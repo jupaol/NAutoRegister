@@ -93,7 +93,7 @@ namespace NAutoRegister.FluentConfiguration
         /// <summary>
         /// Adds the assembly of the generic type to the included assemblies collection
         /// </summary>
-        /// <typeparam name="T">The generic type to get the assembly from</typeparam>
+        /// <typeparam name="T">The type to get the assembly from</typeparam>
         /// <returns>
         /// The current instance of the including assemblies configuration
         /// </returns>
