@@ -48,7 +48,11 @@
     <Compile Include="FluentConfiguration\IAssemblyConfiguration.cs" />
     <Compile Include="FluentConfiguration\IExcludingAssembliesConfiguration.cs" />
     <Compile Include="FluentConfiguration\IIncludingAssembliesConfiguration.cs" />
+    <Compile Include="FluentConfiguration\IMappingsConfiguration.cs" />
     <Compile Include="FluentConfiguration\IncludingAssembliesConfiguration.cs" />
+    <Compile Include="FluentConfiguration\ISpecificMappingsConfiguration.cs" />
+    <Compile Include="FluentConfiguration\MappingsConfiguration.cs" />
+    <Compile Include="FluentConfiguration\SpecificMappingsConfiguration.cs" />
     <Compile Include="IContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RejectBindingCondition.cs" />

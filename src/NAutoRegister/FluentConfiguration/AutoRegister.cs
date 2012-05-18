@@ -41,6 +41,16 @@ namespace NAutoRegister.FluentConfiguration
         internal static IExcludingAssembliesConfiguration ExcludingAssembliesConfiguration { get; private set; }
 
         /// <summary>
+        /// Gets the mappings configuration.
+        /// </summary>
+        internal static IMappingsConfiguration MappingsConfiguration { get; private set; }
+
+        /// <summary>
+        /// Gets the specific mappings configuration.
+        /// </summary>
+        internal static ISpecificMappingsConfiguration SpecificMappingsConfiguration { get; private set; }
+
+        /// <summary>
         /// Starts the configuration process
         /// </summary>
         /// <returns>
@@ -59,6 +69,8 @@ namespace NAutoRegister.FluentConfiguration
             AutoRegister.AssemblyConfiguration = new AssemblyConfiguration();
             AutoRegister.IncludingAssembliesConfiguration = new IncludingAssembliesConfiguration();
             AutoRegister.ExcludingAssembliesConfiguration = new ExcludingAssembliesConfiguration();
+            AutoRegister.MappingsConfiguration = new MappingsConfiguration();
+            AutoRegister.SpecificMappingsConfiguration = new SpecificMappingsConfiguration();
         }
     }
 }

@@ -21,9 +21,14 @@ namespace NAutoRegister.FluentConfiguration
         IEnumerable<Assembly> IncludedAssemblies { get; }
 
         /// <summary>
-        /// Gets the exccluding assemblies configuration options
+        /// Gets the exccluding assemblies configuration
         /// </summary>
         IExcludingAssembliesConfiguration Excluding { get; }
+
+        /// <summary>
+        /// Gets the mappings configuration.
+        /// </summary>
+        IMappingsConfiguration WithMappings { get; }
 
         /// <summary>
         /// Adds the specified assembly to the included assemblies collection

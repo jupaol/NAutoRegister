@@ -113,5 +113,15 @@ namespace NAutoRegisterTests.FluentConfiguration
                 sut.ExcludedAssemblies.Should().NotBeNull().And.HaveCount(1).And.Contain(this.GetType().Assembly);
             }
         }
+
+        [TestClass]
+        public class TheWithMappingsProperty
+        {
+            [TestMethod]
+            public void it_should_return_shared_mappings_configuration_object()
+            {
+                AutoRegister.Configure().Excluding.WithMappings.Should().NotBeNull().And.Be(AutoRegister.MappingsConfiguration);
+            }
+        }
     }
 }

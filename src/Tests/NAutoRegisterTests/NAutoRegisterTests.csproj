@@ -77,6 +77,8 @@
     <Compile Include="FluentConfiguration\AutoRegisterTests.cs" />
     <Compile Include="FluentConfiguration\ExcludingAssembliesConfigurationTests.cs" />
     <Compile Include="FluentConfiguration\IncludingAssembliesConfigurationTests.cs" />
+    <Compile Include="FluentConfiguration\MappingsConfigurationTests.cs" />
+    <Compile Include="FluentConfiguration\SpecificMappingsConfigurationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

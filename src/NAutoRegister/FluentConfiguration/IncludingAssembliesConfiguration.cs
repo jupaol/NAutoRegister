@@ -45,11 +45,19 @@ namespace NAutoRegister.FluentConfiguration
         }
 
         /// <summary>
-        /// Gets the exccluding assemblies configuration options
+        /// Gets the exccluding assemblies configuration
         /// </summary>
         public IExcludingAssembliesConfiguration Excluding
         {
             get { return AutoRegister.ExcludingAssembliesConfiguration; }
+        }
+
+        /// <summary>
+        /// Gets the mappings configuration.
+        /// </summary>
+        public IMappingsConfiguration WithMappings
+        {
+            get { return AutoRegister.MappingsConfiguration; }
         }
 
         /// <summary>

@@ -59,11 +59,19 @@ namespace NAutoRegister.FluentConfiguration
         }
 
         /// <summary>
-        /// Gets the including assembly configuration options.
+        /// Gets the including assembly configuration.
         /// </summary>
         public IIncludingAssembliesConfiguration Including
         {
             get { return AutoRegister.IncludingAssembliesConfiguration; }
+        }
+
+        /// <summary>
+        /// Gets the mappings configuration.
+        /// </summary>
+        public IMappingsConfiguration WithMappings
+        {
+            get { return AutoRegister.MappingsConfiguration; }
         }
 
         /// <summary>
