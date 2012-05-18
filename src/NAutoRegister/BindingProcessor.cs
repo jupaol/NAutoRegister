@@ -43,7 +43,6 @@ namespace NAutoRegister
             Condition.Requires(assemblies).IsNotNull();
 
             this.bindingContracts = new List<BindingContract>();
-            this.loadedTypes = new List<Type>();
             this.loadedTypes = this.ResolveTypes(assemblies).ToList();
         }
 
