@@ -39,6 +39,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyMerger.cs" />
     <Compile Include="BindingContract.cs" />
     <Compile Include="BindingCondition.cs" />
     <Compile Include="BindingProcessor.cs" />

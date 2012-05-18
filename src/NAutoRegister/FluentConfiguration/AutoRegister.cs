@@ -62,6 +62,17 @@ namespace NAutoRegister.FluentConfiguration
         }
 
         /// <summary>
+        /// Registers the specified types
+        /// </summary>
+        internal static void RegisterTypes()
+        {
+            var assemblyMerger = new AssemblyMerger(
+                AutoRegister.IncludingAssembliesConfiguration.IncludedAssemblies,
+                AutoRegister.ExcludingAssembliesConfiguration.ExcludedAssemblies,
+                AutoRegister.ExcludingAssembliesConfiguration.ExcludedAssemblyNames);
+        }
+
+        /// <summary>
         /// Initializes the NAutoRegister configuration
         /// </summary>
         private static void Initialize()
