@@ -20,6 +20,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{E117CD
 		..\Readme.md = ..\Readme.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceLocators", "ServiceLocators", "{E96D5760-FE48-4343-BF4E-1DE3E48F97FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAutoRegister.Ninject", "ServiceLocators\NAutoRegister.Ninject\NAutoRegister.Ninject.csproj", "{ADF4D793-BA0E-46C3-88FE-09BB1151AF7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceLocators", "ServiceLocators", "{3574CE81-9DFD-4719-A7BD-16D247A25788}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAutoRegister.Ninject.Tests", "Tests\ServiceLocators\NAutoRegister.Ninject.Tests\NAutoRegister.Ninject.Tests.csproj", "{3E6BD2D5-AE24-4215-93D0-0410765342C2}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = NAutoRegister.vsmdi
@@ -37,11 +45,22 @@ Global
 		{93CF8F1E-3206-458B-8B65-E8AE8A2D2424}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93CF8F1E-3206-458B-8B65-E8AE8A2D2424}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93CF8F1E-3206-458B-8B65-E8AE8A2D2424}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADF4D793-BA0E-46C3-88FE-09BB1151AF7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADF4D793-BA0E-46C3-88FE-09BB1151AF7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADF4D793-BA0E-46C3-88FE-09BB1151AF7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADF4D793-BA0E-46C3-88FE-09BB1151AF7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E6BD2D5-AE24-4215-93D0-0410765342C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E6BD2D5-AE24-4215-93D0-0410765342C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E6BD2D5-AE24-4215-93D0-0410765342C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E6BD2D5-AE24-4215-93D0-0410765342C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{93CF8F1E-3206-458B-8B65-E8AE8A2D2424} = {CE76BD2B-AC75-4116-AE1C-D5AD9284CCB6}
+		{3574CE81-9DFD-4719-A7BD-16D247A25788} = {CE76BD2B-AC75-4116-AE1C-D5AD9284CCB6}
+		{ADF4D793-BA0E-46C3-88FE-09BB1151AF7F} = {E96D5760-FE48-4343-BF4E-1DE3E48F97FC}
+		{3E6BD2D5-AE24-4215-93D0-0410765342C2} = {3574CE81-9DFD-4719-A7BD-16D247A25788}
 	EndGlobalSection
 EndGlobal
