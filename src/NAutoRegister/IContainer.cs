@@ -42,7 +42,7 @@ namespace NAutoRegister
         /// </summary>
         /// <typeparam name="TContract">The type of the contract.</typeparam>
         /// <typeparam name="TImplementation">The type of the implementation.</typeparam>
-        void Register<TContract, TImplementation>();
+        void Register<TContract, TImplementation>() where TImplementation : class, TContract;
 
         /// <summary>
         /// Registers the implementation type with the contract type specified

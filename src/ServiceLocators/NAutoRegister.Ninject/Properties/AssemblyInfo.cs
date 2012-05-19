@@ -1,4 +1,16 @@
-﻿using System.Reflection;
+﻿// -----------------------------------------------------------------------
+// <copyright file="AssemblyInfo.cs" company="Juan Pablo Olmos Lara (Jupaol)">
+//
+// jupaol@hotmail.com
+// http://jupaol.blogspot.com/
+// 
+// Copyright (c) 2012, Juan Pablo Olmos Lara (Jupaol)
+// All rights reserved.
+// 
+// </copyright>
+// -----------------------------------------------------------------------
+
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 

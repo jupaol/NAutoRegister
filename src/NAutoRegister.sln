@@ -22,7 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{E117CD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceLocators", "ServiceLocators", "{E96D5760-FE48-4343-BF4E-1DE3E48F97FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAutoRegister.Ninject", "ServiceLocators\NAutoRegister.Ninject\NAutoRegister.Ninject.csproj", "{ADF4D793-BA0E-46C3-88FE-09BB1151AF7F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAutoRegister.NinjectProvider", "ServiceLocators\NAutoRegister.Ninject\NAutoRegister.NinjectProvider.csproj", "{ADF4D793-BA0E-46C3-88FE-09BB1151AF7F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceLocators", "ServiceLocators", "{3574CE81-9DFD-4719-A7BD-16D247A25788}"
 EndProject

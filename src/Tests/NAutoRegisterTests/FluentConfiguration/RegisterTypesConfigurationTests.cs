@@ -21,6 +21,25 @@ namespace NAutoRegisterTests.FluentConfiguration
         }
 
         [TestClass]
+        public class TheCurrentContainerProperty
+        {
+            [TestMethod]
+            public void it_should_return_the_current_specified_container()
+            {
+                var mock = new Mock<IContainer>();
+                mock.Setup(x => x.Register(It.IsAny<Type>(), It.IsAny<Type>()));
+
+                var sut = AutoRegister.Configure()
+                    .Including
+                        .Assembly(this.GetType().Assembly)
+                    .WithMappings.SpecificMappings
+                    .WithContainer.Container(mock.Object);
+
+                sut.CurrentContainer.Should().NotBeNull().And.Be(AutoRegister.ContainerConfiguration.CurrentContainer);
+            }
+        }
+
+        [TestClass]
         public class TheRegisterTypesMethod
         {
             [TestMethod]

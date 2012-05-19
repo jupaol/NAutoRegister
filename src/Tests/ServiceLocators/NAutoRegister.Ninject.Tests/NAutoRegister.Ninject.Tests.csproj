@@ -36,7 +36,29 @@
     <Reference Include="FluentAssertions">
       <HintPath>..\..\..\packages\FluentAssertions.1.7.1.1\Lib\net40\FluentAssertions.dll</HintPath>
     </Reference>
+    <Reference Include="Jupaol">
+      <HintPath>..\..\..\..\lib\Jupaol.dll</HintPath>
+    </Reference>
+    <Reference Include="Jupaol.Testing">
+      <HintPath>..\..\..\..\lib\Jupaol.Testing.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Moq, Version=4.0.10827.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Ninject.3.0.0.15\lib\net40\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ploeh.AutoFixture">
+      <HintPath>..\..\..\packages\AutoFixture.2.11.0\lib\Ploeh.AutoFixture.dll</HintPath>
+    </Reference>
+    <Reference Include="Ploeh.AutoFixture.AutoMoq">
+      <HintPath>..\..\..\packages\AutoFixture.AutoMoq.2.11.0\lib\Ploeh.AutoFixture.AutoMoq.dll</HintPath>
+    </Reference>
+    <Reference Include="Ploeh.SemanticComparison">
+      <HintPath>..\..\..\packages\AutoFixture.2.11.0\lib\Ploeh.SemanticComparison.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -50,9 +72,12 @@
     </CodeAnalysisDependentAssemblyPaths>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Integration\NinjectIntegrationTests.cs" />
+    <Compile Include="NinjectContainerProviderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -60,11 +85,12 @@
       <Project>{8BFE1422-95A0-49A6-8AE6-6FD998F01FFD}</Project>
       <Name>NAutoRegister</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\ServiceLocators\NAutoRegister.Ninject\NAutoRegister.Ninject.csproj">
+    <ProjectReference Include="..\..\..\ServiceLocators\NAutoRegister.Ninject\NAutoRegister.NinjectProvider.csproj">
       <Project>{ADF4D793-BA0E-46C3-88FE-09BB1151AF7F}</Project>
-      <Name>NAutoRegister.Ninject</Name>
+      <Name>NAutoRegister.NinjectProvider</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

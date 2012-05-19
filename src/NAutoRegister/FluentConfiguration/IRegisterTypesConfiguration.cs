@@ -23,6 +23,11 @@ namespace NAutoRegister.FluentConfiguration
     public interface IRegisterTypesConfiguration
     {
         /// <summary>
+        /// Gets the current container.
+        /// </summary>
+        IContainer CurrentContainer { get; }
+
+        /// <summary>
         /// Registers the types.
         /// </summary>
         void RegisterTypes();
