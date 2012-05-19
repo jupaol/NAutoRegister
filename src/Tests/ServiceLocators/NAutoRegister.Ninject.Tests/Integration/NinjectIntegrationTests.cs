@@ -21,7 +21,7 @@ namespace NAutoRegister.Ninject.Tests.Integration
                 .Including.Assembly(this.GetType().Assembly)
                 .WithMappings.SpecificMappings.For.Type<IMyContract1<int>>()
                 .WithContainer.Container(new NinjectContainerProvider(kernel))
-                .RegisterTypes();
+                .RegisterTypes().ResetConfiguration();
 
             kernel.Get<IMyContract1<int>>().Should().NotBeNull().And.BeAssignableTo<MyContract1>();
         }
@@ -37,7 +37,7 @@ namespace NAutoRegister.Ninject.Tests.Integration
                 .WithMappings.SpecificMappings.For.Type(typeof(IMyContract4<,,,,>),
                     x => x == typeof(MyGenericImplementation4b),
                     x => x == typeof(MyGenericImplementation4e))
-                .WithContainer.Container(new NinjectContainerProvider(kernel)).RegisterTypes();
+                .WithContainer.Container(new NinjectContainerProvider(kernel)).RegisterTypes().ResetConfiguration();
 
             kernel.Get<IMyContract7<int>>().Should().NotBeNull().And.BeAssignableTo<MyImplementation7a>();
             kernel.GetAll<IMyContract2<MyDto>>().Should().HaveCount(1);
@@ -61,7 +61,7 @@ namespace NAutoRegister.Ninject.Tests.Integration
                 .WithMappings.SpecificMappings.For.Type(typeof(IMyContract2<MyDto>))
                 .WithMappings.SpecificMappings.For.Type(typeof(IMyContract3a))
                 .WithMappings.SpecificMappings.For.Type(typeof(IMyContract3b<int>))
-                .WithContainer.Container(new NinjectContainerProvider(kernel)).RegisterTypes();
+                .WithContainer.Container(new NinjectContainerProvider(kernel)).RegisterTypes().ResetConfiguration();
 
             kernel.GetAll<IMyContract4<MyDto3, bool, Int64, MyDto, Tuple<int, Tuple<decimal, string>>>>()
                 .Should().HaveCount(3);
@@ -83,7 +83,7 @@ namespace NAutoRegister.Ninject.Tests.Integration
                     x => x == typeof(MyImplementation6c),
                     x => x == typeof(MyImplementation6c),
                     x => x == typeof(MyImplementation6d))
-                .WithContainer.Container(new NinjectContainerProvider(kernel)).RegisterTypes();
+                .WithContainer.Container(new NinjectContainerProvider(kernel)).RegisterTypes().ResetConfiguration();
 
             kernel.GetAll<IMyContract5>().Should().HaveCount(3);
             kernel.GetAll<IMyContract6>().Should().HaveCount(6);

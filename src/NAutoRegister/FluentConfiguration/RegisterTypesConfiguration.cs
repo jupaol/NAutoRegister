@@ -33,9 +33,22 @@ namespace NAutoRegister.FluentConfiguration
         /// <summary>
         /// Registers the types.
         /// </summary>
-        public void RegisterTypes()
+        /// <returns>
+        /// The current <see cref="IRegisterTypesConfiguration"/> instance
+        /// </returns>
+        public IRegisterTypesConfiguration RegisterTypes()
         {
             AutoRegister.RegisterTypes();
+
+            return this;
+        }
+
+        /// <summary>
+        /// Resets the configuration.
+        /// </summary>
+        public void ResetConfiguration()
+        {
+            AutoRegister.ResetConfiguration();
         }
     }
 }

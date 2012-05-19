@@ -51,7 +51,7 @@ namespace NAutoRegisterTests.FluentConfiguration
                 mock.Setup(x => x.Register(It.IsAny<Type>(), It.IsAny<Type>()))
                     .Callback<Type, Type>((x, y) => list.Add(Tuple.Create<Type, Type>(x, y)));
 
-                AutoRegister.Configure()
+                var sut = AutoRegister.Configure()
                     .Including
                         .Assembly(this.GetType().Assembly)
                     .WithMappings.SpecificMappings
@@ -66,7 +66,41 @@ namespace NAutoRegisterTests.FluentConfiguration
                     .And.Contain(Tuple.Create<Type, Type>(typeof(IMyContract1<MyDto>), typeof(MyGenericImplementation1b)))
                     .And.Contain(Tuple.Create<Type, Type>(typeof(IMyContract1<MyDto>), typeof(MyGenericImplementation1d)))
                     .And.Contain(Tuple.Create<Type, Type>(typeof(IMyContract1<MyDto>), typeof(MyGenericImplementation1e)));
+
+                sut.Should().NotBeNull().And.Be(AutoRegister.RegisterTypesConfiguration);
+
+                sut.ResetConfiguration();
             }
+        }
+    }
+
+    [TestClass]
+    public class TheResetConfigurationMethod
+    {
+        [TestMethod]
+        public void it_should_reset_the_current_configuration()
+        {
+            AutoRegister.Configure();
+            var assemblyCfg = AutoRegister.AssemblyConfiguration;
+            var containerCfg = AutoRegister.ContainerConfiguration;
+            var excludingCfg = AutoRegister.ExcludingAssembliesConfiguration;
+            var includingCfg = AutoRegister.IncludingAssembliesConfiguration;
+            var mappingCfg = AutoRegister.MappingsConfiguration;
+            var registerCfg = AutoRegister.RegisterTypesConfiguration;
+            var specificMappingsCfg = AutoRegister.SpecificMappingsConfiguration;
+            var specificMappingsForTypeCfg = AutoRegister.SpecificMappingsConfigurationForType;
+
+            AutoRegister.Configure().Including.WithMappings.SpecificMappings.WithContainer
+                .Container(new Mock<IContainer>().Object).ResetConfiguration();
+
+            AutoRegister.AssemblyConfiguration.Should().NotBe(assemblyCfg);
+            AutoRegister.ContainerConfiguration.Should().NotBe(containerCfg);
+            AutoRegister.ExcludingAssembliesConfiguration.Should().NotBe(excludingCfg);
+            AutoRegister.IncludingAssembliesConfiguration.Should().NotBe(includingCfg);
+            AutoRegister.MappingsConfiguration.Should().NotBe(mappingCfg);
+            AutoRegister.RegisterTypesConfiguration.Should().NotBe(registerCfg);
+            AutoRegister.SpecificMappingsConfiguration.Should().NotBe(specificMappingsCfg);
+            AutoRegister.SpecificMappingsConfigurationForType.Should().NotBe(specificMappingsForTypeCfg);
         }
     }
 }

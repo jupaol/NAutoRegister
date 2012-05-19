@@ -100,6 +100,14 @@ namespace NAutoRegister.FluentConfiguration
         }
 
         /// <summary>
+        /// Resets the configuration.
+        /// </summary>
+        internal static void ResetConfiguration()
+        {
+            Initialize();
+        }
+
+        /// <summary>
         /// Initializes the NAutoRegister configuration
         /// </summary>
         private static void Initialize()
