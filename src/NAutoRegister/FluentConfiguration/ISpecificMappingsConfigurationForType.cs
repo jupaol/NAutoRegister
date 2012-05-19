@@ -31,7 +31,7 @@ namespace NAutoRegister.FluentConfiguration
         /// <summary>
         /// Starts the mappings configuration for the specified type
         /// </summary>
-        /// <typeparam name="T">The contract type (base type, usually an interface or an abstract class) to configure.</typeparam>
+        /// <typeparam name="T">The contract type (base type, usually an interface) to configure.</typeparam>
         /// <param name="evaluateCondition">The evaluate condition. This condition will be applied to all the types implementing
         /// or inheriting the <c>T</c> type specified. This condition will determine if the
         /// implementing type being evaluated should be auto registered as an implementation
@@ -45,7 +45,7 @@ namespace NAutoRegister.FluentConfiguration
         /// <summary>
         /// Starts the mappings configuration for the specified type
         /// </summary>
-        /// <param name="type">The contract type (base type, usually an interface or an abstract class) to configure.</param>
+        /// <param name="type">The contract type (base type, usually an interface) to configure.</param>
         /// <param name="evaluateCondition">The evaluate condition. This condition will be applied to all the types implementing
         /// or inheriting the <c>type</c> type specified. This condition will determine if the
         /// implementing type being evaluated should be auto registered as an implementation
