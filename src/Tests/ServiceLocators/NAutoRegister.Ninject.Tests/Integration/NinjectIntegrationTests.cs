@@ -31,7 +31,7 @@ namespace NAutoRegister.Ninject.Tests.Integration
         {
             var kernel = new StandardKernel();
             AutoRegister.Configure().Including.Assembly(this.GetType().Assembly)
-                .WithMappings.SpecificMappings.For.Type(typeof(IMyContract1<>))
+                .WithMappings.SpecificMappings.For.Type(typeof(IMyContract7<>))
                 .WithMappings.SpecificMappings.For.Type(typeof(IMyContract2<>),
                     x => x == typeof(MyGenericImplementation2a))
                 .WithMappings.SpecificMappings.For.Type(typeof(IMyContract4<,,,,>),
@@ -39,7 +39,7 @@ namespace NAutoRegister.Ninject.Tests.Integration
                     x => x == typeof(MyGenericImplementation4e))
                 .WithContainer.Container(new NinjectContainerProvider(kernel)).RegisterTypes();
 
-            kernel.Get<IMyContract1<int>>().Should().NotBeNull().And.BeAssignableTo<MyContract1>();
+            kernel.Get<IMyContract7<int>>().Should().NotBeNull().And.BeAssignableTo<MyImplementation7a>();
             kernel.GetAll<IMyContract2<MyDto>>().Should().HaveCount(1);
             kernel.GetAll<IMyContract4<MyDto3, bool, Int64, MyDto, Tuple<int, Tuple<decimal, string>>>>().Should().HaveCount(3);
             kernel.GetAll<IMyContract4<MyDto, int, string, MyDto, decimal>>().Should().HaveCount(1);
@@ -100,6 +100,9 @@ namespace NAutoRegister.Ninject.Tests.Integration
     interface IMyContract4<T, W, X, Y, Z> { }
     interface IMyContract5 { }
     interface IMyContract6 { }
+    interface IMyContract7<T> { }
+
+    class MyImplementation7a : IMyContract7<int> { }
 
     class MyImplementation5a : IMyContract5 { }
     class MyImplementation5b : IMyContract5 { }
